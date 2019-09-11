@@ -124,7 +124,7 @@ table {
 	color: black;
 	content: "*";
 	line-height: 55px;
-	background-image: url(../bomb.png);
+	background-image: url(../img/bomb.png);
 	-webkit-background-size: 100%;
 	background-size: 100%;
 }
@@ -150,7 +150,7 @@ table {
 	color: black;
 	content: "*";
 	line-height: 55px;
-	background-image: url(../bomb.png);
+	background-image: url(../img/bomb.png);
 	-webkit-background-size: 100%;
 	background-size: 100%;
 }
