@@ -1,0 +1,156 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+#main{
+	min-width: 410px;
+	display: flex;
+	border-collapse: collapse;
+	min-height: 100vh;
+	align-items: center;
+	background-color: #222;
+}
+#sweepergrid{
+	border-style: inset;
+	width: 392px;
+	height: 392px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	border-left: 8px solid #777;
+	border-top: 8px solid #777;
+	border-right: 8px solid white;
+	border-bottom: 8px solid white;
+	box-shadow: -3px 0 0 5px lightgrey;
+	margin: 0 auto;
+}
+#sweepergrid::after{
+	width: 450px;
+	height: 450px;
+	position: static;
+	top: 0;
+	border-style: outset;
+	border-top: 5px solid white;
+	border-left: 5px solid white;
+}
+.sweeperbox::after{
+	text-align: center;
+	line-height: 50px;
+	font-size: 32px;
+	font-weight: bold;
+	display: block;
+}
+.sweeperbox, .sweeperbox::after{
+	height: 46px;
+	width: 46px;
+	border-bottom: 3px dotted black;
+	border-right: 3px dotted black;
+	}
+.sweeperbox{
+	background-color: #ccc;
+	border-collapse: collapse;
+}
+
+/*Blue 1*/
+.sweeperbox:nth-of-type(1)::after,.sweeperbox:nth-of-type(3)::after,.sweeperbox:nth-of-type(5)::after,
+.sweeperbox:nth-of-type(7)::after,.sweeperbox:nth-of-type(13)::after,.sweeperbox:nth-of-type(14)::after,
+.sweeperbox:nth-of-type(15)::after,.sweeperbox:nth-of-type(17)::after,.sweeperbox:nth-of-type(19)::after,
+.sweeperbox:nth-of-type(27)::after,.sweeperbox:nth-of-type(34)::after,.sweeperbox:nth-of-type(36)::after,
+.sweeperbox:nth-of-type(37)::after,.sweeperbox:nth-of-type(39)::after,.sweeperbox:nth-of-type(40)::after{
+	color: blue;
+	content: "1"
+}
+
+/*Green 2*/
+.sweeperbox:nth-of-type(9)::after,.sweeperbox:nth-of-type(10)::after,.sweeperbox:nth-of-type(11)::after,
+.sweeperbox:nth-of-type(25)::after,.sweeperbox:nth-of-type(26)::after,.sweeperbox:nth-of-type(38)::after,
+.sweeperbox:nth-of-type(41)::after,.sweeperbox:nth-of-type(46)::after{
+	color: green;
+	content: "2"
+}
+
+/*Red 3*/
+.sweeperbox:nth-of-type(42)::after,.sweeperbox:nth-of-type(43)::after,.sweeperbox:nth-of-type(44)::after,
+.sweeperbox:nth-of-type(54)::after{
+	color: red;
+	content: "3"
+}
+
+/*Bomb*/
+.sweeperbox:nth-of-type(2),.sweeperbox:nth-of-type(6),.sweeperbox:nth-of-type(18),
+.sweeperbox:nth-of-type(33),.sweeperbox:nth-of-type(45),.sweeperbox:nth-of-type(47),
+.sweeperbox:nth-of-type(50),.sweeperbox:nth-of-type(51),.sweeperbox:nth-of-type(52),
+.sweeperbox:nth-of-type(62)
+{
+	color: black;
+	content: "*";
+	line-height: 55px;
+	background-image: url(../bomb.png);
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+
+/*Blank*/
+.sweeperbox:nth-of-type(48),.sweeperbox:nth-of-type(49),.sweeperbox:nth-of-type(53),
+.sweeperbox:nth-of-type(55),.sweeperbox:nth-of-type(56),.sweeperbox:nth-of-type(57),
+.sweeperbox:nth-of-type(58),.sweeperbox:nth-of-type(59),.sweeperbox:nth-of-type(60),
+.sweeperbox:nth-of-type(61),.sweeperbox:nth-of-type(63),.sweeperbox:nth-of-type(64)
+{
+	color: black;
+	background-color: #d4d4d4;
+	border-bottom: 3px solid black;
+	border-right: 3px solid black;
+	box-shadow: inset 3px 3px 0px 0px rgba(255,255,255,1), inset -3px -3px 0px 0px rgba(120,120,120,1);
+}
+
+.sweeperbox:nth-of-type(48):hover:after,.sweeperbox:nth-of-type(49):hover:after,.sweeperbox:nth-of-type(53):hover:after,
+.sweeperbox:nth-of-type(55):hover:after,.sweeperbox:nth-of-type(56):hover:after,.sweeperbox:nth-of-type(57):hover:after,
+.sweeperbox:nth-of-type(58):hover:after,.sweeperbox:nth-of-type(59):hover:after,.sweeperbox:nth-of-type(60):hover:after,
+.sweeperbox:nth-of-type(61):hover:after,.sweeperbox:nth-of-type(63):hover:after,.sweeperbox:nth-of-type(64):hover:after
+{
+	color: black;
+	content: "*";
+	line-height: 55px;
+	background-image: url(../bomb.png);
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
